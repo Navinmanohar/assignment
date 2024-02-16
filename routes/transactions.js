@@ -92,9 +92,9 @@ app.get('/statistics/:month', async (req, res) => {
   // Endpoint to get combined data
   app.get('/combined/:month', async (req, res) => {
     const month = req.params.month;
-    const statistics = await axios.get(`http://localhost:5000/api/statistics/${month}`);
-    const barchart = await axios.get(`http://localhost:5000/api/barchart/${month}`);
-    const piechart = await axios.get(`http://localhost:5000/api/piechart/${month}`);
+    const statistics = await axios.get(process.env.STATISTICS_URl+month);
+    const barchart = await axios.get(process.env.BARCHART_URL+month);
+    const piechart = await axios.get(process.env.PIECHART_URL+month);
   
     res.json({
         
