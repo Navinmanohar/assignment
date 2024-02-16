@@ -92,9 +92,9 @@ app.get('/statistics/:month', async (req, res) => {
   // Endpoint to get combined data
   app.get('/combined/:month', async (req, res) => {
     const month = req.params.month;
-    const statistics = await axios.get(process.env.STATISTICS_URl+month);
-    const barchart = await axios.get(process.env.BARCHART_URL+month);
-    const piechart = await axios.get(process.env.PIECHART_URL+month);
+    const statistics = await axios.get(`https://assesment-hn6f.onrender.com/api/statistics/${month}`);
+    const barchart = await axios.get(`https://assesment-hn6f.onrender.com/api/barchart/${month}`);
+    const piechart = await axios.get(`https://assesment-hn6f.onrender.com/api/piechart/${month}`);
   
     res.json({
         
