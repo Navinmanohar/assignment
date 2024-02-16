@@ -8,7 +8,7 @@ const Transaction = require('../models/Transaction');
 app.post('/initialize-database', async (req, res) => {
   try {
     // Fetch data from third-party API
-    const response = await axios.get(process.env.BASE_URL);
+    const response = await axios.get('https://s3.amazonaws.com/roxiler.com/product_transaction.json');
     const transactions = await response.data;
 
     // Insert data into MongoDB
