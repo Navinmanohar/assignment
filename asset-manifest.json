@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/assignment/tree/main/front/static/css/main.5ab43e9f.css",
+    "main.js": "/assignment/tree/main/front/static/js/main.47634a34.js",
+    "static/media/web.jpg": "/assignment/tree/main/front/static/media/web.9b748033963fbbbec614.jpg",
+    "static/media/email.svg": "/assignment/tree/main/front/static/media/email.0803a1ca9aa9af4a0b40114e48cc6602.svg",
+    "static/media/telephone.svg": "/assignment/tree/main/front/static/media/telephone.b4a626c77be92a1af23a3d8f7a3f77a6.svg",
+    "index.html": "/assignment/tree/main/front/index.html",
+    "static/media/github.svg": "/assignment/tree/main/front/static/media/github.a2dcecaacdba94077f71818776dd805b.svg",
+    "static/media/linkedin.svg": "/assignment/tree/main/front/static/media/linkedin.48c578785988bce75017d928a5dc8a14.svg",
+    "static/media/house.svg": "/assignment/tree/main/front/static/media/house.a258e2ee3f98cbabce46796d187fdd81.svg",
+    "main.5ab43e9f.css.map": "/assignment/tree/main/front/static/css/main.5ab43e9f.css.map",
+    "main.47634a34.js.map": "/assignment/tree/main/front/static/js/main.47634a34.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5ab43e9f.css",
+    "static/js/main.47634a34.js"
+  ]
+}
