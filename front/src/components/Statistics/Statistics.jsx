@@ -26,11 +26,10 @@ function Statistics({ selectedMonth }) {
     return <div><loder/></div>;
   }
 
-  const month=selectedMonth.value===0?"Full year":selectedMonth.label
 
   return (
     <div className="chart-all">
-      <div><h1 className='chart-head'>Pie Chart Stats - {month} </h1> </div>
+      <div><h1 className='chart-head'>Pie Chart Stats - {selectedMonth.label} </h1> </div>
     <div className="chart">
         
       <div className="chart-data">

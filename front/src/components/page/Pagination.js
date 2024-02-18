@@ -20,11 +20,11 @@ function Pagination({ page, handlePreviousClick, handleNextClick, itemsPerPage, 
       <button   
       className={isLastPage?"button-prev":"button-next"} 
         onClick={handleNextClick}
-        disabled={isLastPage}
+        
       >
         Next
       </button>
-      <div><h3>Per page:{itemsPer=itemsPerPage<11?totalItems:10} </h3></div>
+      <div><h3>Per page:{itemsPer=itemsPerPage>=10?10:totalItems} </h3></div>
     </div>:<Loder/>}
     </>
   );

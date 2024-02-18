@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Bar,Legend,Tooltip,YAxis,XAxis,CartesianGrid,BarChart} from 'recharts';
 import "./BarChatr.css"
 import BarCustom from './BarCustom';
+import Loder from '../Loder/Loder';
 
 
 
@@ -30,7 +31,7 @@ function TransactionsBarChart({ selectedMonth }) {
   }, [selectedMonth]);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div><Loder/></div>;
   }
 
   if (error) {
@@ -41,12 +42,11 @@ function TransactionsBarChart({ selectedMonth }) {
     return null; // Or any other fallback UI
   }
    const seriesData = chartData.map(data => data.count);
-   const month=selectedMonth.value===0?"Full year":selectedMonth.label
 
   return (
    <> 
     <div className='bar-chart'>
-    <h1 className='chart-head'>Bar Chart Stats -{month}  </h1> 
+    <h1 className='chart-head'>Bar Chart Stats -{selectedMonth.label}  </h1> 
              <BarCustom  seriesData={seriesData}/>               
     </div>
     </>
