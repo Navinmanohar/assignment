@@ -41,11 +41,12 @@ function TransactionsBarChart({ selectedMonth }) {
     return null; // Or any other fallback UI
   }
    const seriesData = chartData.map(data => data.count);
+   const month=selectedMonth.value===0?"Full year":selectedMonth.label
 
   return (
    <> 
     <div className='bar-chart'>
-    <h1 className='chart-head'>Bar Chart Stats - {selectedMonth.label}  </h1> 
+    <h1 className='chart-head'>Bar Chart Stats -{month}  </h1> 
              <BarCustom  seriesData={seriesData}/>               
     </div>
     </>
