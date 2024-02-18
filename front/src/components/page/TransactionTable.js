@@ -19,7 +19,7 @@ function TransactionTable({ transactions, searchText }) {
           {transactions.map((transaction, index) => (
             <tr key={transaction._id} className="table-row">
               <td className="col col-1" data-label="Customer Name">
-                {searchText !== '' ? index + 1 : transaction.id}
+                {searchText != '' ? index + 1 : transaction.id}
               </td>
               <td className="col col-2" data-label="Amount">
                 {transaction.title}

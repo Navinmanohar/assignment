@@ -1,6 +1,6 @@
 import React from 'react';
-import TextField from '@mui/material/TextField';
 import Select from 'react-select';
+
 
 const filter = [
     { value: '', label: '--Select--' },
@@ -8,10 +8,12 @@ const filter = [
     { value: 'Description', label: 'Description' },
     { value: 'Price', label: 'Price' },
   ];
+
 function SearchInput({ searchText, handleSearchChange, handleFilterChange, selectedValue }) {
+  //  console.log(searchText, handleSearchChange, handleFilterChange, selectedValue )
   return (
     <div className="h-input">
-      <TextField
+       <input type="text" className="input" placeholder='Search product'
         id="outlined-basic"
         label="Search"
         value={searchText}

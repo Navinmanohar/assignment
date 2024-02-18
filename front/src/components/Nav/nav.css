@@ -8,7 +8,8 @@
     padding: 0 20px; /* Add padding to space out the links */
     font-size: 18px;
     position: sticky;
-    top:0px
+    top:0px;
+    z-index: 2;
   }
   
   .nav div {

@@ -19,12 +19,18 @@ app.post('/initialize-database', async (req, res) => {
     console.error(error);
     res.status(500).json({ message: 'Internal server error' });
   }
-});
+}); 
 
 // Endpoint to get all transactions
-app.get('/transactions', async (req, res) => {
-  const transactions = await Transaction.find();
-  res.json(transactions);
+app.get('/transactions/:month', async (req, res) => {
+  const month = Number(req.params.month)
+  if(month===0)
+  {const transactions = await Transaction.find();
+    res.json(transactions);
+  }else{
+    const transactions = await Transaction.find({ dateOfSale: { $gte: new Date(2022, month - 1, 1), $lt: new Date(2022, month, 1) } });
+    res.json(transactions);
+  }
 });
 
 // Endpoint to get statistics

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { PieChart } from "@mui/x-charts/PieChart";
+import PieComponent from "./PieComponent";
+import Loder from "../Loder/Loder";
 
 
 function Statistics({ selectedMonth }) {
@@ -22,12 +23,12 @@ function Statistics({ selectedMonth }) {
   };
 
   if (!statistics) {
-    return <div>Loading...</div>;
+    return <div><loder/></div>;
   }
 
   return (
     <div className="chart-all">
-      <div><h1 className='chart-head'>Bar Chart Stats - {selectedMonth.label} </h1> </div>
+      <div><h1 className='chart-head'>Pie Chart Stats - {selectedMonth.label} </h1> </div>
     <div className="chart">
         
       <div className="chart-data">
@@ -36,27 +37,7 @@ function Statistics({ selectedMonth }) {
         <p>Total Not Sold Items: {statistics.totalNotSoldItems}</p>
       </div>
       <div className="chart-pie">
-        <PieChart
-          series={[
-            {
-              data: [
-                {
-                  id: 0,
-                  value: statistics.totalSoldItems,
-                  label: "Total Sold",
-                },
-                {
-                  id: 1,
-                  value: statistics.totalNotSoldItems,
-                  label: "Total Not Sold",
-                },
-              ],
-            },
-          ]}
-          width={400}
-          height={200}
-        />
-        <p className="pie">Pie chart of sold and unsold item</p>
+       <PieComponent props={statistics}/>
       </div>
     </div>
     </div>

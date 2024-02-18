@@ -1,226 +1,257 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.chart {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px;
+    
+    margin: 10px;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .chart-all{
+    border: 2px solid black;
+    margin: 10px;
   }
-  to {
-    transform: rotate(360deg);
+  .pie{
+     font-weight: bold;
+    margin: 0px 6rem 0px 0px;
+    text-align: center;
   }
-}
-
-/* Style for the responsive table container */
+  .chart-head {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .chart-data {
+    margin-bottom: 20px;
+  }
+  
+  .chart-pie {
+    width: 400px;
+    height: 200px;
+    margin-top: -30px;
+  }
+  .pie-head{
+margin-top:-7rem;
+  }
+  /* Style for the responsive table container */
 .responsive-table {
-  overflow-x: auto;
-}
-
-/* Style for the table */
-.responsive-table table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-/* Style for table headers */
-.responsive-table th {
-  background-color: #f2f2f2;
-  font-weight: bold;
-  padding: 10px;
-  text-align: left;
-}
-
-/* Style for table data cells */
-.responsive-table td {
-  padding: 10px;
-  border-bottom: 1px solid #ddd;
-}
-
-/* Style for alternating row colors */
-.responsive-table tbody tr:nth-child(even) {
-  background-color: #f9f9f9;
-}
-
-/* Style for the table image */
-.table-image {
-  max-width: 100px;
-  height: auto;
-}
-.t-head{
-  background-color: white;
-  font-weight: bold;
-  border-radius: 80px;
-  margin-top: 1rem;
-  padding: 3px;
-  width: 7%;
-}
-.t-content{
-  text-align: center;
-  padding: 3px;
-
-}
-.Head{
-  display: flex;
-  justify-content: space-around;
- 
-}
-.h-select{
-  margin-top: 7rem;
-  width: 30%;
-  z-index: -1;
-}
-.filter-select{
-  margin-left: 5px;
-  padding: 5px;
-  width: 10rem;
-}
-#outlined-basic{
-  padding: 8.5px;
-  text-align: center;
-  margin-top: 6px;
-}
-.h-input{
-  margin-top: 7rem;
-  display: flex;
-  z-index: -1;
-}
-/* Responsive styles */
-@media screen and (max-width: 600px) {
+    overflow-x: auto;
+  }
+  
+  /* Style for the table */
   .responsive-table table {
     width: 100%;
+    border-collapse: collapse;
   }
   
-  .responsive-table thead, .responsive-table tbody, .responsive-table th, .responsive-table td, .responsive-table tr {
-    display: block;
-  }
-  
-  .responsive-table thead tr {
-    position: absolute;
-    top: -9999px;
-    left: -9999px;
-  }
-  
-  .responsive-table tr {
-    border: 1px solid #ccc;
-  }
-  
-  .responsive-table td {
-    border: none;
-    border-bottom: 1px solid #eee;
-    position: relative;
-    padding-left: 50%;
+  /* Style for table headers */
+  .responsive-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    padding: 10px;
     text-align: left;
   }
   
-  .responsive-table td:before {
-    position: absolute;
-    top: 6px;
-    left: 6px;
-    width: 45%;
-    padding-right: 10px;
-    white-space: nowrap;
+  /* Style for table data cells */
+  .responsive-table td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
   }
   
-  .responsive-table td:nth-of-type(1):before {
-    content: "ID:";
-    font-weight: bold;
+  /* Style for alternating row colors */
+  .responsive-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
   }
   
-  .responsive-table td:nth-of-type(2):before {
-    content: "Title:";
-    font-weight: bold;
-  }
-  
-  .responsive-table td:nth-of-type(3):before {
-    content: "Description:";
-    font-weight: bold;
-  }
-  
-  .responsive-table td:nth-of-type(4):before {
-    content: "Price:";
-    font-weight: bold;
-  }
-  
-  .responsive-table td:nth-of-type(5):before {
-    content: "Category:";
-    font-weight: bold;
-  }
-  
-  .responsive-table td:nth-of-type(6):before {
-    content: "Sold:";
-    font-weight: bold;
-  }
-  
-  .responsive-table td:nth-of-type(7):before {
-    content: "Image:";
-    font-weight: bold;
-  }
-  
+  /* Style for the table image */
   .table-image {
-    max-width: 50px;
+    max-width: 100px;
     height: auto;
   }
-}
-.btn-next{
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  margin: 10px;
-}
-.chart {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  padding: 20px;
+  .t-head{
+    background-color: white;
+    /* border: 2px solid black; */
+    border-radius: 80px;
+    margin-top: 1rem;
+    padding: 3px;
+    width: 7%;
+    font-size: large;
+  }
+  .t-content{
+    text-align: center;
+    padding: 3px;
+ 
+  }
+  .Head{
+    display: flex;
+    justify-content: space-around;
+   
+  }
+  .h-select{
+    margin-top: 7rem;
+    width: 30%;
   
-  margin: 10px;
-}
-.chart-all{
-  border: 2px solid black;
-  margin: 10px;
-}
-.pie{
-   font-weight: bold;
-  margin: 0px 6rem 0px 0px;
-  text-align: center;
-}
-.chart-head {
-  font-size: 24px;
-  margin-bottom: 20px;
-  text-align: center;
-}
+  }
+  .filter-select{
+    margin-left: 5px;
+    padding: 5px;
+    width: 10rem;
+  }
+  .input{
+    width: 50%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
 
-.chart-data {
-  margin-bottom: 20px;
-}
-
-.chart-pie {
-  width: 400px;
-  height: 200px;
-}
+  .button-prev,
+  .button-next {
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+  }
+  
+  .button-prev {
+    background-color: #f0f0f0;
+    color: #333;
+    border: 1px solid #ccc;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  }
+  
+  .button-next {
+    background-color: #007bff;
+    color: #fff;
+    border: 2px solid #007bff;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  }
+  
+  .button-prev:hover,
+  .button-next:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .button-prev:active,
+  .button-next:active {
+    background-color: #d9d9d9;
+  }
+  
+  .button-prev:disabled,
+  .button-next:disabled {
+    background-color: #f5f5f5;
+    color: #999;
+    border-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  
+  
+  @media screen and (max-width: 600px) {
+    .pagination-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  
+  
+  .input:focus {
+    outline: none;
+    border-color: #d4e2f1; 
+    box-shadow: 0 0 2px #1b7af7; 
+  }
+  #outlined-basic{
+    padding: 8.5px;
+    text-align: center;
+    margin-top: 6px;
+  }
+  .h-input{
+    margin-top: 7rem;
+    display: flex;
+   
+  }
+ 
+  @media screen and (max-width: 600px) {
+    .responsive-table table {
+      width: 100%;
+    }
+    
+    .responsive-table thead, .responsive-table tbody, .responsive-table th, .responsive-table td, .responsive-table tr {
+      display: block;
+    }
+    
+    .responsive-table thead tr {
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+    }
+    
+    .responsive-table tr {
+      border: 1px solid #ccc;
+    }
+    
+    .responsive-table td {
+      border: none;
+      border-bottom: 1px solid #eee;
+      position: relative;
+      padding-left: 50%;
+      text-align: left;
+    }
+    
+    .responsive-table td:before {
+      position: absolute;
+      top: 6px;
+      left: 6px;
+      width: 45%;
+      padding-right: 10px;
+      white-space: nowrap;
+    }
+    
+    .responsive-table td:nth-of-type(1):before {
+      content: "ID:";
+      font-weight: bold;
+    }
+    
+    .responsive-table td:nth-of-type(2):before {
+      content: "Title:";
+      font-weight: bold;
+    }
+    
+    .responsive-table td:nth-of-type(3):before {
+      content: "Description:";
+      font-weight: bold;
+    }
+    
+    .responsive-table td:nth-of-type(4):before {
+      content: "Price:";
+      font-weight: bold;
+    }
+    
+    .responsive-table td:nth-of-type(5):before {
+      content: "Category:";
+      font-weight: bold;
+    }
+    
+    .responsive-table td:nth-of-type(6):before {
+      content: "Sold:";
+      font-weight: bold;
+    }
+    
+    .responsive-table td:nth-of-type(7):before {
+      content: "Image:";
+      font-weight: bold;
+    }
+    
+    .table-image {
+      max-width: 50px;
+      height: auto;
+    }
+  }
+  .btn-next{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 10px;
+  }

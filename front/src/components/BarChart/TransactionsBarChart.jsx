@@ -1,12 +1,16 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import axios from 'axios';
-import { BarChart } from '@mui/x-charts/BarChart';
+import { Bar,Legend,Tooltip,YAxis,XAxis,CartesianGrid,BarChart} from 'recharts';
 import "./BarChatr.css"
+import BarCustom from './BarCustom';
+
+
 
 function TransactionsBarChart({ selectedMonth }) {
   const [chartData, setChartData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+
 
   const fetchChartData = useCallback(async () => {
     setLoading(true);
@@ -23,7 +27,7 @@ function TransactionsBarChart({ selectedMonth }) {
 
   useEffect(() => {
     fetchChartData();
-  }, [fetchChartData]);
+  }, [selectedMonth]);
 
   if (loading) {
     return <div>Loading...</div>;
@@ -36,31 +40,15 @@ function TransactionsBarChart({ selectedMonth }) {
   if (!chartData) {
     return null; // Or any other fallback UI
   }
-
-  const barCategories = ["0-100","101-200","201-300","301-400","401-500","501-600","601-700","701-800","801-900",'901-1000'];
-  const seriesData = chartData.map(data => data.count);
+   const seriesData = chartData.map(data => data.count);
 
   return (
    <> 
     <div className='bar-chart'>
-    <h1 className='chart-head'>Bar Chart Stats - {selectedMonth.label} </h1> 
-      <BarChart
-      xAxis={[
-        {
-          id: 'barCategories',
-          data: barCategories,
-          scaleType: 'band',
-        },
-      ]}
-      series={[
-        {
-          data: seriesData,
-        },
-      ]}
-      width={500}
-      height={300}
-    />
-    </div></>
+    <h1 className='chart-head'>Bar Chart Stats - {selectedMonth.label}  </h1> 
+             <BarCustom  seriesData={seriesData}/>               
+    </div>
+    </>
   );
 }
 

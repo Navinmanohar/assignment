@@ -1,32 +1,32 @@
 import React from 'react';
-import Button from '@material-ui/core/Button';
+import Loder from '../Loder/Loder';
 
 function Pagination({ page, handlePreviousClick, handleNextClick, itemsPerPage, totalItems }) {
   const totalPages = Math.ceil(totalItems / itemsPerPage);
   const isLastPage = page === totalPages;
-
+       
   return (
-    <div className="btn-next">
+    <>
+    {totalItems!=0?<div className="btn-next">
       <div><h3>Page No :{page}</h3></div>
-      <Button
-        variant="contained"
-        color="primary"
+      <button
+        className={page===1?"button-prev":"button-next"} 
+        type="button"
         onClick={handlePreviousClick}
         disabled={page === 1}
       >
         Prev
-      </Button>
-
-      <Button
-        variant="contained"
-        color="primary"
-        disabled={isLastPage}
+      </button>
+      <button   
+      className={isLastPage?"button-prev":"button-next"} 
         onClick={handleNextClick}
+        disabled={isLastPage}
       >
         Next
-      </Button>
+      </button>
       <div><h3>Per page:{itemsPerPage} </h3></div>
-    </div>
+    </div>:<Loder/>}
+    </>
   );
 }
 
