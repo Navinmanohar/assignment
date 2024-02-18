@@ -1,17 +1,31 @@
-
- 
- .containerloder {
-    background-color: transparent;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    height: 80px;
-    transform: translate(-50%, -50%);
+.html {
+    background-image: radial-gradient(
+       circle farthest-corner at -4% -12.9%,
+       rgb(166, 170, 173) 0.3%,
+       rgb(112, 112, 123) 90.2%
+    );
+  
  }
+ 
+ 
+   .containerloder {
+      background-color: transparent;
+      position: fixed; /* Fixed position to cover the entire viewport */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      display: flex;
+      align-items: center; /* Center vertically */
+      justify-content: center; /* Center horizontally */
+      z-index: 9999; /* Ensure it's above other content */
+  }
+  
+ 
  
  .lineloder {
     position: relative;
-    background-color: #ffffff80;
+    background-color: #ebe6e680;
     display: inline-block;
     height: 0px;
     border-radius: 5px;
@@ -66,6 +80,8 @@
     text-align: center;
     color: #ffffff90;
     font-family: "Noto Sans", sans-serif;
+    margin-top: 88px;
+    margin-left: -110px;
  }
  
  .dot {

@@ -43,7 +43,7 @@ export default function Footer() {
       <img src={linkdin}/>
       </Link>
       <Link href="https://github.com/Navinmanohar">
-        <img src={git} alt="" />
+        <img src={git} alt="git" />
       </Link>
     </div>
   </div>

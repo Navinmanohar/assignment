@@ -11,12 +11,7 @@ export default function Loder() {
       <div className="lineloder d4" />
       <div className="lineloder d5" />
       <br />
-      <div className="captionloder">
-        <p style={{ display: "inline-block" }}>Loading</p>
-        <div className="dot">.</div>
-        <div className="dot">.</div>
-        <div className="dot">.</div>
-      </div>
+     
     </div>
   </>
  
