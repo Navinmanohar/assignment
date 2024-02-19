@@ -1,18 +1,18 @@
 import './App.css';
 import Transactions from './components/Transactions';
 import Nav from './components/Nav/Nav';
-import {BrowserRouter} from "react-router-dom"
+import { HashRouter} from "react-router-dom"
 import Footer from "./components/Footer/Footer"
 
 
 function App() {
   return (
     <>
-    <BrowserRouter>
+    <HashRouter>
     <Nav/>
     <Transactions/>
     <Footer/>
-    </BrowserRouter>
+    </HashRouter>
     </>
   );
 }
