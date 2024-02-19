@@ -4,7 +4,7 @@ import Loder from '../Loder/Loder';
 function Pagination({ page, handlePreviousClick, handleNextClick, itemsPerPage, totalItems }) {
   const totalPages = Math.ceil(totalItems / itemsPerPage);
   const isLastPage = page === totalPages;
-       let itemsPer
+       const itemsPer=totalItems>=10?10:totalItems
   return (
     <>
     {totalItems!==0?<div className="btn-next">
@@ -24,7 +24,7 @@ function Pagination({ page, handlePreviousClick, handleNextClick, itemsPerPage, 
       >
         Next
       </button>
-      <div><h3>Per page:{itemsPer=itemsPerPage>=10?10:totalItems} </h3></div>
+      <div><h3>Per page:{itemsPer} </h3></div>
     </div>:<Loder/>}
     </>
   );
