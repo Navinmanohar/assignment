@@ -17,13 +17,21 @@ function Pagination({ page, handlePreviousClick, handleNextClick, itemsPerPage, 
       >
         Prev
       </button>
-      <button   
-      className={isLastPage?"button-prev":"button-next"} 
+      <button
+        className={isLastPage?"button-prev":"button-next"}  
+        type="button"
         onClick={handleNextClick}
         disabled={isLastPage}
       >
         Next
       </button>
+      <button
+        type='button'
+        style={{color:"white", background:"white",width:"1px", height:"1px", border:"0px solid white" }}
+      >
+        Next
+      </button>
+      
       <div><h3>Per page:{itemsPer} </h3></div>
     </div>:<Loder/>}
     </>
