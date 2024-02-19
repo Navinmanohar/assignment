@@ -20,7 +20,7 @@ function Pagination({ page, handlePreviousClick, handleNextClick, itemsPerPage, 
       <button   
       className={isLastPage?"button-prev":"button-next"} 
         onClick={handleNextClick}
-        
+        disabled={isLastPage}
       >
         Next
       </button>
