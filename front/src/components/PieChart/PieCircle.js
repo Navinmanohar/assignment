@@ -58,26 +58,27 @@ const PieCircle = ({ props }) => {
             <Cell
               key={`cell-${index}`}
               fill={COLORS[index % COLORS.length]}
-              onMouseEnter={() => handleMouseEnter(entry)}
-              onMouseLeave={handleMouseLeave}
+              onMouseOver={() => handleMouseEnter(entry)}
             />
           ))}
         </Pie>
-        <Tooltip />
-      </PieChart>
-      <div style={{ marginLeft: 20 }}>
+        
         <Legend
+        style={{ margin: "-300px" ,float:"right" }}
           verticalAlign="middle"
           layout="vertical"
-          align="left"
+          align="right"
           payload={pieData.map((entry, index) => ({
             value: entry.name,
             type: "square",
             color: COLORS[index % COLORS.length],
           }))}
         />
-      </div>
-      {hoveredField && <div>Hovered Field: {hoveredField}</div>}
+        <Tooltip />
+        {hoveredField && <div>Hovered Field: {hoveredField}</div>}
+        
+      </PieChart>
+      
     </div>
   );
 };

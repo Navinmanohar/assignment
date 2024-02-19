@@ -121,7 +121,9 @@ margin-top:-7rem;
     border: 1px solid #ccc;
     transition: background-color 0.3s, color 0.3s, border-color 0.3s;
   }
-  
+  .recharts-legend-wrapper{
+    margin: -54px;
+  }
   .button-next {
     background-color: #007bff;
     color: #fff;

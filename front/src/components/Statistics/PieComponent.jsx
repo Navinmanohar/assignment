@@ -46,7 +46,7 @@ const PieComponent = ({ props }) => {
           data={data}
           cx={200}
           cy={200}
-          labelLine={true}
+          labelLine={false}
           label={renderCustomizedLabel}
           outerRadius={80}
           fill="#8884d8"
@@ -56,25 +56,28 @@ const PieComponent = ({ props }) => {
             <Cell
               key={`cell-${index}`}
               fill={COLORS[index % COLORS.length]}
-              onMouseEnter={() => handleMouseEnter(entry)}
-              onMouseLeave={handleMouseLeave}
+              onMouseOver={() => handleMouseEnter(entry)}
+               
             />
           ))}
         </Pie>
-      </PieChart>
-      <div style={{ marginLeft: 20 }}>
         <Legend
+        style={{ margin: "-70%" }}
           verticalAlign="middle"
           layout="vertical"
-          align="left"
+          align="right"
           payload={data.map((entry, index) => ({
             value: entry.name,
             type: "square",
             color: COLORS[index % COLORS.length],
           }))}
         />
-      </div>
-      {hoveredField && <div>Hovered Field: {hoveredField}</div>}
+        <Tooltip />
+        {hoveredField && <div>Hovered Field: {hoveredField}</div>}
+      </PieChart>
+   
+      
+      
     </div>
   );
 };
