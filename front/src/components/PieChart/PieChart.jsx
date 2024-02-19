@@ -1,13 +1,14 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import axios from 'axios';
 import { Bar,Legend,Tooltip,YAxis,XAxis,CartesianGrid,BarChart} from 'recharts';
-import "./BarChatr.css"
-import BarCustom from './BarCustom';
+
 import Loder from '../Loder/Loder';
+import PieCircle from './PieCircle';
 
 
 
-function TransactionsBarChart({ selectedMonth }) {
+
+function PieChart({ selectedMonth }) {
   const [chartData, setChartData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -17,7 +18,7 @@ function TransactionsBarChart({ selectedMonth }) {
     setLoading(true);
     setError(null);
     try {
-      const response = await axios.get(`https://assesment-hn6f.onrender.com/api/barchart/${selectedMonth.value}`);
+      const response = await axios.get(`https://assesment-hn6f.onrender.com/api/piechart/${selectedMonth.value}`);
       setChartData(response.data);
     } catch (error) {
       setError(error.message || 'An error occurred');
@@ -45,12 +46,24 @@ function TransactionsBarChart({ selectedMonth }) {
 
   return (
    <> 
-    <div className='bar-chart'>
-    <h1 className='chart-head'>Bar Chart Stats -{selectedMonth.label}  </h1> 
-      <BarCustom  seriesData={seriesData}/>               
+   <div className="chart-all">
+      <div><h1 className='chart-head'>Pie Chart Stats - {selectedMonth.label} </h1> </div>
+    <div className="chart">
+        
+      <div className="chart-data">
+        {chartData.map((value)=>{
+            return <>
+            <p> {value.category} :{value.count} </p>
+            </>
+        })}
+      </div>
+      <div className="chart-pie">
+       <PieCircle props={chartData}/>
+      </div>
+    </div>
     </div>
     </>
   );
 }
 
-export default TransactionsBarChart;
+export default PieChart;

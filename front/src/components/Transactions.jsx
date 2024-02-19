@@ -8,6 +8,7 @@ import Select from "react-select";
 import Statistics from "./Statistics/Statistics";
 import TransactionsBarChart from "./BarChart/TransactionsBarChart";
 import { months } from "../utils/utils";
+import PieChart from "./PieChart/PieChart"
 
 const itemsPerPage = 10;
 
@@ -111,6 +112,7 @@ console.log(transactions)
           totalItems={totalItems}
         />
         <Statistics selectedMonth={selectedMonth} />
+        <PieChart selectedMonth={selectedMonth}/>
         <TransactionsBarChart selectedMonth={selectedMonth} />
       </div>
     </div>
