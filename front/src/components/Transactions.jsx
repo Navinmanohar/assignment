@@ -26,7 +26,7 @@ function Transactions() {
     const fetchTransactions = async () => {
       try {
         const response = await axios.get(
-          `https:/assesment-hn6f.onrender.com/api/transactions/${selectedMonth.value}`
+          `https://assesment-hn6f.onrender.com/api/transactions/${selectedMonth.value}`
         );
         setTransactions(response.data);
       } catch (error) {
