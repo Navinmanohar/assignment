@@ -21,6 +21,10 @@ mongoose.connect(process.env.MONGO_URL,{
 
 // Routes
 app.use('/api', require('./routes/transactions'));
+ 
+app.get('/',(req,res)=>{
+  res.status(200).send("Welcome")
+})
 
 // Start the server
 app.listen(PORT, () => {
