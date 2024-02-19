@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-// import { months } from '../utils/utils';
 import TransactionTable from "./page/TransactionTable";
 import SearchInput from "./page/SearchInput";
 import Pagination from "./page/Pagination";

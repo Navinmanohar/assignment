@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import axios from 'axios';
-import { Bar,Legend,Tooltip,YAxis,XAxis,CartesianGrid,BarChart} from 'recharts';
 
 import Loder from '../Loder/Loder';
 import PieCircle from './PieCircle';

@@ -1,25 +1,21 @@
 import React, { useState, useCallback } from "react";
 import { PieChart, Pie, Cell, Tooltip, Legend } from "recharts";
 
-
-
-
 const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
 
 const RADIAN = Math.PI / 180;
 
-const PieComponent = ({props}) => {
+const PieComponent = ({ props }) => {
   const [hoveredField, setHoveredField] = useState(null);
   const data = [
-    { name: "Sold item", value: props.totalSoldItems},
+    { name: "Sold item", value: props.totalSoldItems },
     { name: "Not sold item", value: props.totalNotSoldItems },
-    
   ];
   const handleMouseEnter = useCallback((entry) => {
     setHoveredField(entry.name);
   }, []);
 
-  const handleMouseLeave =() => {
+  const handleMouseLeave = () => {
     setHoveredField(null);
   };
   const renderCustomizedLabel = useCallback(
@@ -45,37 +41,41 @@ const PieComponent = ({props}) => {
 
   return (
     <div style={{ display: "flex" }}>
-    <PieChart width={400} height={400} className="pie-head">
-      <Pie
-        data={data}
-        cx={200}
-        cy={200}
-        labelLine={true}
-        label={renderCustomizedLabel}
-        outerRadius={80}
-        fill="#8884d8"
-        dataKey="value"
-      >
-        {data.map((entry, index) => (
-          <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} onMouseEnter={() => handleMouseEnter(entry)}
-          onMouseLeave={handleMouseLeave} />
-        ))}
-      </Pie>
-    </PieChart>
-    <div style={{ marginLeft: 20 }}>
-    <Legend
-      verticalAlign="middle"
-      layout="vertical"
-      align="left"
-      payload={data.map((entry, index) => ({
-        value: entry.name,
-        type: "square",
-        color: COLORS[index % COLORS.length]
-      }))}
-    />
-  </div>
-  {hoveredField && <div>Hovered Field: {hoveredField}</div>}
-</div>
+      <PieChart width={400} height={400} className="pie-head">
+        <Pie
+          data={data}
+          cx={200}
+          cy={200}
+          labelLine={true}
+          label={renderCustomizedLabel}
+          outerRadius={80}
+          fill="#8884d8"
+          dataKey="value"
+        >
+          {data.map((entry, index) => (
+            <Cell
+              key={`cell-${index}`}
+              fill={COLORS[index % COLORS.length]}
+              onMouseEnter={() => handleMouseEnter(entry)}
+              onMouseLeave={handleMouseLeave}
+            />
+          ))}
+        </Pie>
+      </PieChart>
+      <div style={{ marginLeft: 20 }}>
+        <Legend
+          verticalAlign="middle"
+          layout="vertical"
+          align="left"
+          payload={data.map((entry, index) => ({
+            value: entry.name,
+            type: "square",
+            color: COLORS[index % COLORS.length],
+          }))}
+        />
+      </div>
+      {hoveredField && <div>Hovered Field: {hoveredField}</div>}
+    </div>
   );
 };
 

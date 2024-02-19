@@ -9,14 +9,14 @@ const PieCircle = ({ props }) => {
 
   const pieData = props.map((value, index) => ({
     name: value.category,
-    value: value.count
+    value: value.count,
   }));
 
   const handleMouseEnter = useCallback((entry) => {
     setHoveredField(entry.name);
   }, []);
 
-  const handleMouseLeave =() => {
+  const handleMouseLeave = () => {
     setHoveredField(null);
   };
 
@@ -73,7 +73,7 @@ const PieCircle = ({ props }) => {
           payload={pieData.map((entry, index) => ({
             value: entry.name,
             type: "square",
-            color: COLORS[index % COLORS.length]
+            color: COLORS[index % COLORS.length],
           }))}
         />
       </div>

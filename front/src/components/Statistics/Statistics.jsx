@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import PieComponent from "./PieComponent";
-import Loder from "../Loder/Loder";
 
 
 function Statistics({ selectedMonth }) {
