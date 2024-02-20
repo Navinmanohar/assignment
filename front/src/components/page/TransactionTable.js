@@ -1,6 +1,7 @@
 import React from 'react';
 
 function TransactionTable({ transactions, searchText }) {
+  console.log(transactions?.length)
   return (
     <div className="responsive-table">
       <table className="responsive-table">
@@ -16,7 +17,7 @@ function TransactionTable({ transactions, searchText }) {
           </tr>
         </thead>
         <tbody>
-          {transactions.map((transaction, index) => (
+          {transactions.length!=0? transactions.map((transaction, index) => (
             <tr key={transaction._id} className="table-row">
               <td className="col col-1" data-label="Customer Name">
                 {searchText !=='' ? index + 1 : transaction.id}
@@ -44,7 +45,7 @@ function TransactionTable({ transactions, searchText }) {
                 />
               </td>
             </tr>
-          ))}
+          )):"Not item present please write something else"}
         </tbody>
       </table>
     </div>

@@ -55,6 +55,10 @@ console.log(transactions)
       );
       setFiltered(filtered);
     }
+    if(filtered==null){
+      setPage(1)
+      setFiltered(null)
+    }
   };
 
   const handleNextClick = () => {
