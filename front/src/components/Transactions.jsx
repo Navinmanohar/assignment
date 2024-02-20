@@ -54,9 +54,7 @@ console.log(transactions)
           transaction.price.toString().includes(text)
       );
       setFiltered(filtered);
-    }
-    if(filtered==null){
-      setPage(1)
+    }else{
       setFiltered(null)
     }
   };
