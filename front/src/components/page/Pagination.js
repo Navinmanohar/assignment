@@ -7,7 +7,7 @@ function Pagination({ page, handlePreviousClick, handleNextClick, itemsPerPage, 
        const itemsPer=totalItems>=10?10:totalItems
   return (
     <>
-    {totalItems??<div className="btn-next">
+    {<div className="btn-next">
       <div><h3>Page No :{page}</h3></div>
       <button
         className={page===1?"button-prev":"button-next"} 
